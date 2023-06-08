@@ -1,7 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Fraunces&display=swap');
+
+body h1 {
+  font-family: 'Fraunces', serif;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
 
 .ms-primary {
   color: #b38b37;
+}
+
+.ms-bg-primary {
+  background-color: #b38b37;
 }
