@@ -1,14 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Fraunces&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces&family=Nunito+Sans&display=swap');
 
-body h1 {
+body h1,
+body h2,
+body h3 {
   font-family: 'Fraunces', serif;
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .ms-primary {

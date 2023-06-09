@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../Pages/Home/Home/Home";
-import Instructor from "../Pages/Home/Instructor/Instructor";
-import Classes from "../Pages/Home/Classes/Classes";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
+import Classes from "../Pages/Classes/Classes/Classes";
+import Instructor from "../Pages/Instructors/Instructor/Instructor";
 
 const router = createBrowserRouter([
     {

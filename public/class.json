@@ -55,7 +55,7 @@
     },
     {
         "name": "Saxophone Class",
-        "image": "saxophone.jpg",
+        "image": "https://i.ibb.co/6YdbhX7/Saxophone.jpg",
         "instructor": "Brianne Johnson",
         "instructorEmail": "brianne.johnson@musician.com",
         "availableSeats": 10,
@@ -64,7 +64,7 @@
     },
     {
         "name": "Accordion Class",
-        "image": "accordion.jpg",
+        "image": "https://i.ibb.co/SRRN60K/Accordion.jpg",
         "instructor": "Mandy Jackson",
         "instructorEmail": "mandy.jackson@musician.com",
         "availableSeats": 12,
@@ -73,7 +73,7 @@
     },
     {
         "name": "Harp Class",
-        "image": "harp.jpg",
+        "image": "https://i.ibb.co/jJ9qsMp/Harp.jpg",
         "instructor": "Kaylin Moore",
         "instructorEmail": "kaylin.moore@musician.com",
         "availableSeats": 8,
@@ -82,7 +82,7 @@
     },
     {
         "name": "Trumpet Class",
-        "image": "trumpet.jpg",
+        "image": "https://i.ibb.co/bmKscdQ/Trumpet.jpg",
         "instructor": "Jane Taylor",
         "instructorEmail": "jane.taylor@musician.com",
         "availableSeats": 15,
@@ -91,7 +91,7 @@
     },
     {
         "name": "Banjo Class",
-        "image": "banjo.jpg",
+        "image": "https://i.ibb.co/6NkPcDj/Banjo.jpg",
         "instructor": "Gwen Jones",
         "instructorEmail": "gwen.jones@musician.com",
         "availableSeats": 18,
@@ -100,7 +100,7 @@
     },
     {
         "name": "Ukulele Class",
-        "image": "ukulele.jpg",
+        "image": "https://i.ibb.co/18GpNYN/ukulele.jpg",
         "instructor": "John Brown",
         "instructorEmail": "john.brown@musician.com",
         "availableSeats": 7,
@@ -109,7 +109,7 @@
     },
     {
         "name": "Mandolin Class",
-        "image": "mandolin.jpg",
+        "image": "https://i.ibb.co/gmDWYt6/Mandolin.jpg",
         "instructor": "Edith Williams",
         "instructorEmail": "edith.williams@musician.com",
         "availableSeats": 22,
@@ -118,7 +118,7 @@
     },
     {
         "name": "Bass Guitar Class",
-        "image": "bass-guitar.jpg",
+        "image": "https://i.ibb.co/VtGXxvR/bass-guitar.jpg",
         "instructor": "Brianne Johnson",
         "instructorEmail": "brianne.johnson@musician.com",
         "availableSeats": 10,
@@ -127,7 +127,7 @@
     },
     {
         "name": "French Horn Class",
-        "image": "french-horn.jpg",
+        "image": "https://i.ibb.co/3zhRRN3/French-Horn.jpg",
         "instructor": "Aaron Hill",
         "instructorEmail": "aron.hill@musician.com",
         "availableSeats": 25,
@@ -136,7 +136,7 @@
     },
     {
         "name": "Celesta Class",
-        "image": "celesta.jpg",
+        "image": "https://i.ibb.co/k3fNpHt/Celesta.jpg",
         "instructor": "Kaylin Moore",
         "instructorEmail": "kaylin.moore@musician.com",
         "availableSeats": 20,
@@ -145,7 +145,7 @@
     },
     {
         "name": "Clarinet Class",
-        "image": "clarinet.jpg",
+        "image": "https://i.ibb.co/C9Qq1qb/Clarinet.jpg",
         "instructor": "Jane Taylor",
         "instructorEmail": "jane.taylor@musician.com",
         "availableSeats": 5,
@@ -154,7 +154,7 @@
     },
     {
         "name": "Xylophone Class",
-        "image": "xylophone.jpg",
+        "image": "https://i.ibb.co/vc3QgSj/Xylophone.jpg",
         "instructor": "Gwen Jones",
         "instructorEmail": "gwen.jones@musician.com",
         "availableSeats": 10,
@@ -163,7 +163,7 @@
     },
     {
         "name": "Bagpipes Class",
-        "image": "bagpipes.jpg",
+        "image": "https://i.ibb.co/7kHt1FL/Bagpipes.jpg",
         "instructor": "John Brown",
         "instructorEmail": "john.brown@musician.com",
         "availableSeats": 12,
@@ -172,7 +172,7 @@
     },
     {
         "name": "Tuba Class",
-        "image": "tuba.jpg",
+        "image": "https://i.ibb.co/p4fj845/Tuba.jpg",
         "instructor": "Edith Williams",
         "instructorEmail": "edith.williams@musician.com",
         "availableSeats": 8,
