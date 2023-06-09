@@ -31,7 +31,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="">
-                    <a className="btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white">Login</a>
+                    <Link to="/login" className="btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white">Login</Link>
                 </div>
             </div>
         </div>
