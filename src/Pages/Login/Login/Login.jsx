@@ -1,12 +1,38 @@
 import SectionCover from "../../Shared/SectionCover/SectionCover";
 import logImg from '../../../assets/images/login.jpg'
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaExclamationCircle } from "react-icons/fa";
+import useAuth from "../../../hooks/useAuth";
+import { useState } from "react";
+import Swal from "sweetalert2";
 const Login = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { login } = useAuth();
+    const [error, setError] = useState('')
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.from?.state?.pathname || '/'
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        setError('')
+        console.log(data)
+        login(data.email, data.password)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success...',
+                    text: 'Login successful!',
+
+                })
+                navigate(from, { replace: true });
+
+            }).catch(error => {
+                // console.log(error.message);
+                setError(error.message)
+            })
+    };
     return (
         <div>
             <SectionCover img={logImg} title="Login"></SectionCover>
@@ -42,6 +68,7 @@ const Login = () => {
                 </form>
                 <SocialLogin>Log in with Google</SocialLogin>
                 <p className='mt-3 text-xs text-start px-8'>Do not have an account? <Link to="/registration" className='text-[#b37b38] font-semibold '>Sign up for free</Link></p>
+                <p className="text-xs text-red-500 font-semibold px-8 text-start mt-3">{error}</p>
             </div>
 
         </div>

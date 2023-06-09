@@ -1,7 +1,37 @@
+import axios from 'axios';
 import googleImg from '../../../assets/images/google.png'
+import useAuth from '../../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 const SocialLogin = ({ children }) => {
-    const handleGoogleSignIn = () => {
+    const { googleSignIn } = useAuth();
+    const navigate = useNavigate();
 
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log('google', loggedUser);
+                const newUser = {
+                    name: loggedUser?.displayName,
+                    email: loggedUser?.email,
+                    image: loggedUser?.photoURL,
+
+                }
+                axios.post('http://localhost:5000/users', newUser)
+                    .then(data => {
+                        console.log(data);
+                        if (data.data.insertedId) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success...',
+                                text: 'Login successful!',
+
+                            })
+                        }
+                        navigate('/')
+                    })
+            })
     }
     return (
         <div className='px-8'>
