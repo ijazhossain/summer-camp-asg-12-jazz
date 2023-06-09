@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Cello Class",
+        "image": "https://i.ibb.co/KxFy2MZ/drum.jpg",
+        "instructor": "Mandy Jackson",
+        "instructorEmail": "mandy.jackson@musician.com",
+        "availableSeats": 30,
+        "price": 99.99,
+        "status": "approved"
+    },
+    {
+        "name": "Singing Class",
+        "image": "https://i.ibb.co/PC2Gkvw/singing.jpg",
+        "instructor": "Kaylin Moore",
+        "instructorEmail": "kaylin.moore@musician.com",
+        "availableSeats": 15,
+        "price": 149.99,
+        "status": "approved"
+    },
+    {
+        "name": "Violin Class",
+        "image": "https://i.ibb.co/YWjZBR4/violine.jpg",
+        "instructor": "Jane Taylor",
+        "instructorEmail": "jane.taylor@musician.com",
+        "availableSeats": 10,
+        "price": 199.99,
+        "status": "approved"
+    },
+    {
+        "name": "Piano Class",
+        "image": "https://i.ibb.co/9gJPY15/piano.jpg",
+        "instructor": "Gwen Jones",
+        "instructorEmail": "gwen.jones@musician.com",
+        "availableSeats": 25,
+        "price": 79.99,
+        "status": "approved"
+    },
+    {
+        "name": "Flute Class",
+        "image": "https://i.ibb.co/yWq0KZS/flute.jpg",
+        "instructor": "John Brown",
+        "instructorEmail": "john.brown@musician.com",
+        "availableSeats": 20,
+        "price": 129.99,
+        "status": "approved"
+    },
+    {
+        "name": "Guitar Class",
+        "image": "https://i.ibb.co/2sPr3yn/guitar.jpg",
+        "instructor": "Edith Williams",
+        "instructorEmail": "edith.williams@musician.com",
+        "availableSeats": 5,
+        "price": 299.99,
+        "status": "approved"
+    },
+    {
+        "name": "Saxophone Class",
+        "image": "saxophone.jpg",
+        "instructor": "Brianne Johnson",
+        "instructorEmail": "brianne.johnson@musician.com",
+        "availableSeats": 10,
+        "price": 89.99,
+        "status": "approved"
+    },
+    {
+        "name": "Accordion Class",
+        "image": "accordion.jpg",
+        "instructor": "Mandy Jackson",
+        "instructorEmail": "mandy.jackson@musician.com",
+        "availableSeats": 12,
+        "price": 179.99,
+        "status": "approved"
+    },
+    {
+        "name": "Harp Class",
+        "image": "harp.jpg",
+        "instructor": "Kaylin Moore",
+        "instructorEmail": "kaylin.moore@musician.com",
+        "availableSeats": 8,
+        "price": 219.99,
+        "status": "approved"
+    },
+    {
+        "name": "Trumpet Class",
+        "image": "trumpet.jpg",
+        "instructor": "Jane Taylor",
+        "instructorEmail": "jane.taylor@musician.com",
+        "availableSeats": 15,
+        "price": 99.99,
+        "status": "approved"
+    },
+    {
+        "name": "Banjo Class",
+        "image": "banjo.jpg",
+        "instructor": "Gwen Jones",
+        "instructorEmail": "gwen.jones@musician.com",
+        "availableSeats": 18,
+        "price": 149.99,
+        "status": "pending"
+    },
+    {
+        "name": "Ukulele Class",
+        "image": "ukulele.jpg",
+        "instructor": "John Brown",
+        "instructorEmail": "john.brown@musician.com",
+        "availableSeats": 7,
+        "price": 199.99,
+        "status": "pending"
+    },
+    {
+        "name": "Mandolin Class",
+        "image": "mandolin.jpg",
+        "instructor": "Edith Williams",
+        "instructorEmail": "edith.williams@musician.com",
+        "availableSeats": 22,
+        "price": 79.99,
+        "status": "pending"
+    },
+    {
+        "name": "Bass Guitar Class",
+        "image": "bass-guitar.jpg",
+        "instructor": "Brianne Johnson",
+        "instructorEmail": "brianne.johnson@musician.com",
+        "availableSeats": 10,
+        "price": 199.99,
+        "status": "pending"
+    },
+    {
+        "name": "French Horn Class",
+        "image": "french-horn.jpg",
+        "instructor": "Aaron Hill",
+        "instructorEmail": "aron.hill@musician.com",
+        "availableSeats": 25,
+        "price": 79.99,
+        "status": "pending"
+    },
+    {
+        "name": "Celesta Class",
+        "image": "celesta.jpg",
+        "instructor": "Kaylin Moore",
+        "instructorEmail": "kaylin.moore@musician.com",
+        "availableSeats": 20,
+        "price": 129.99,
+        "status": "denied"
+    },
+    {
+        "name": "Clarinet Class",
+        "image": "clarinet.jpg",
+        "instructor": "Jane Taylor",
+        "instructorEmail": "jane.taylor@musician.com",
+        "availableSeats": 5,
+        "price": 299.99,
+        "status": "denied"
+    },
+    {
+        "name": "Xylophone Class",
+        "image": "xylophone.jpg",
+        "instructor": "Gwen Jones",
+        "instructorEmail": "gwen.jones@musician.com",
+        "availableSeats": 10,
+        "price": 89.99,
+        "status": "denied"
+    },
+    {
+        "name": "Bagpipes Class",
+        "image": "bagpipes.jpg",
+        "instructor": "John Brown",
+        "instructorEmail": "john.brown@musician.com",
+        "availableSeats": 12,
+        "price": 179.99,
+        "status": "denied"
+    },
+    {
+        "name": "Tuba Class",
+        "image": "tuba.jpg",
+        "instructor": "Edith Williams",
+        "instructorEmail": "edith.williams@musician.com",
+        "availableSeats": 8,
+        "price": 219.99,
+        "status": "denied"
+    }
+]
