@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
-import router from './Routes/routes.jsx'
+import router from './Pages/router/routes.jsx'
 import {
   QueryClient,
   QueryClientProvider,

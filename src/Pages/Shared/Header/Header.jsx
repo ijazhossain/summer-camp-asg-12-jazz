@@ -37,7 +37,8 @@ const Header = () => {
                             <p><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/">Home</Link></p>
                             <p ><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/instructors">Instructors</Link></p>
                             <p><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/classes">Classes</Link></p>
-                            <p ><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard">Dashboard</Link></p>
+                            <p ><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
+                            ">Dashboard</Link></p>
                             {
                                 user && <span className="cursor-pointer tooltip" data-tip={user?.displayName}><img className='w-[60px] h-60px border border-[#b37b38] rounded-full me-10' src={user.photoURL} alt="" /></span>
                             }

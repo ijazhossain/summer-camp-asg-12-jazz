@@ -2,10 +2,12 @@ import axios from 'axios';
 import googleImg from '../../../assets/images/google.png'
 import useAuth from '../../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SocialLogin = ({ children }) => {
     const { googleSignIn } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -29,7 +31,7 @@ const SocialLogin = ({ children }) => {
 
                             })
                         }
-                        navigate('/')
+                        navigate(from, { replace: true })
                     })
             })
     }

@@ -1,13 +1,70 @@
 
+import axios from 'axios';
 import seatIcon from '../../../assets/images/icon-availability.svg'
+import useAuth from '../../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import useClasses from '../../../hooks/useClasses';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SingleClass = ({ singleClass }) => {
+    const { user } = useAuth();
+    const location = useLocation()
+    const navigate = useNavigate()
+    // console.log(user);
     // console.log(singleClass);
-    const { _id, name, image, instructor, price, description, availableSeats } = singleClass;
+    const [, refetch,] = useClasses();
+    const { _id, name, image, instructor, instructorEmail, price, description, availableSeats } = singleClass;
     // console.log(_id, name, instructor, instructorEmail, price,  description, availableSeats);
+
+    const handleSelect = (_id) => {
+
+        // console.log(_id);
+        console.log(user?.email);
+        if (user && user.email) {
+            const cartItem = {
+                studentEmail: user?.email,
+                classId: _id,
+                name,
+                image,
+                instructor,
+                instructorEmail,
+                price,
+                description,
+                availableSeats
+            }
+            axios.post('http://localhost:5000/carts', cartItem)
+                .then(data => {
+                    console.log(data);
+                    if (data.data.cartInsertion.insertedId && data.data.seatUpdate.modifiedCount > 0) {
+                        refetch()
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: `${name} added successfully`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        } else {
+            Swal.fire({
+                title: 'Do you want to select this class?',
+                text: "Please login first!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#b38b37',
+                cancelButtonColor: '#f58c0d',
+                confirmButtonText: 'Login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location } })
+                }
+            })
+        }
+    }
     return (
-        <div className='flex flex-col border border-[#f1f1f1]'>
+        <div className={`flex flex-col border border-[#f1f1f1] ${availableSeats === 0 && 'bg-red-300'}`}>
             <div className="relative">
-                <img src={image} alt="class img" />
+                <img className='w-full' src={image} alt="class img" />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25">
                     <button className='bg-[#f58c0d] border-none text-white btn btn-xs absolute top-3 right-3'>$ {price}</button>
                 </div>
@@ -23,7 +80,7 @@ const SingleClass = ({ singleClass }) => {
                     <img className='w-[23px] mr-2' src={seatIcon} alt="" />
                     <p className='text-[#aba5a3]'>{availableSeats} seats</p>
                 </div>
-                <button className='btn btn-sm bg-[#f2c63f] text-white capitalize'>Select</button>
+                <button onClick={() => handleSelect(_id)} disabled={availableSeats === 0 ? true : false} className='btn btn-sm bg-[#f2c63f] text-white capitalize'>Select</button>
             </div>
         </div>
     );

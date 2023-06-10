@@ -3,10 +3,14 @@ import useInstructor from "../../../hooks/useInstructors";
 import SectionCover from "../../Shared/SectionCover/SectionCover";
 import bannerImg from '../../../assets/images/teacherBanner.jpg'
 import SingleInstructor from "../SingleInstructor/SingleInstructor";
+import Spinner from "../../Shared/Spinner/Spinner";
 
 const Instructor = () => {
-    const [instructors] = useInstructor()
+    const [instructors, instructorLoading] = useInstructor()
     // console.log(instructors);
+    if (instructorLoading) {
+        return <Spinner></Spinner>
+    }
     return (
         <div>
             <Helmet>
