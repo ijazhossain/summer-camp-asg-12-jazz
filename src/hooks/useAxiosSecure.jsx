@@ -14,7 +14,7 @@ const useAxiosSecure = () => {
 
     useEffect(() => {
         axiosSecure.interceptors.request.use((config) => {
-            const token = localStorage.getItem('bistro-access-token');
+            const token = localStorage.getItem('musician_secret_token');
             // console.log({ token });
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;

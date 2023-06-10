@@ -8,7 +8,7 @@ import userPic from '../assets/images/userPro.avif'
 import { FaBars } from "react-icons/fa";
 const DashboardLayout = () => {
     const { user } = useAuth();
-    console.log(user);
+    // console.log(user);
     return (
         <div>
             <Header></Header>

@@ -6,11 +6,9 @@ import SingleInstructor from "../SingleInstructor/SingleInstructor";
 import Spinner from "../../Shared/Spinner/Spinner";
 
 const Instructor = () => {
-    const [instructors, instructorLoading] = useInstructor()
+    const [instructors] = useInstructor()
     // console.log(instructors);
-    if (instructorLoading) {
-        return <Spinner></Spinner>
-    }
+
     return (
         <div>
             <Helmet>
