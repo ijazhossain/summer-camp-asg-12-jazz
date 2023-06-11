@@ -2,9 +2,10 @@ import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import useEnrolledClasses from "../../../../hooks/useEnrolledClasses";
 
 
+
 const PaymentHistory = () => {
     const [paidClasses] = useEnrolledClasses()
-    console.log(paidClasses);
+    // console.log(paidClasses);
     return (
         <>
             <SectionTitle>Payment History</SectionTitle>

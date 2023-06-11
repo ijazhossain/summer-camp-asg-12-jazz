@@ -3,6 +3,7 @@ import logo from '../../../../src/assets/images/footer-logo.png'
 import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
+    // TODO dashboard route set according to user
     const { user, logOut } = useAuth()
     const handleLogOut = () => {
         logOut()

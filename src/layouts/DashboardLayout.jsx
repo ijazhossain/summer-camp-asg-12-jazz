@@ -62,15 +62,11 @@ const DashboardLayout = () => {
                                         Add class</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/enrolledClasses">
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/inspectorClass">
                                         <FaMoneyCheck></FaMoneyCheck>
-                                        Enrolled Classes</NavLink>
+                                        My classes</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/paymentHistory">
-                                        <FaPaypal></FaPaypal>
-                                        Payment History</NavLink>
-                                </li>
+
                             </>}
                         </div>
 
