@@ -5,10 +5,12 @@ import SectionCover from "../Pages/Shared/SectionCover/SectionCover";
 import dashboardImg from "../assets/images/adminBg.jpg"
 import useAuth from "../hooks/useAuth";
 import userPic from '../assets/images/userPro.avif'
-import { FaBars, FaBook, FaMoneyCheck } from "react-icons/fa";
+import { FaBars, FaBook, FaMoneyCheck, FaPaypal } from "react-icons/fa";
 const DashboardLayout = () => {
     const { user } = useAuth();
     // console.log(user);
+    const isStudent = false;
+    const isInstructor = true;
     return (
         <div>
             <Header></Header>
@@ -33,18 +35,43 @@ const DashboardLayout = () => {
                             <p className="mt-2 font-semibold text-xs">Email: {user?.email && user?.email}</p>
                         </div>
 
-                        {/* Sidebar content here */}
+                        {/* For Students */}
                         <div className="space-y-4">
-                            <li>
-                                <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/selectedClasses">
-                                    <FaBook></FaBook>
-                                    My selected Classes</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/enrolledClasses">
-                                    <FaMoneyCheck></FaMoneyCheck>
-                                    My enrolled Classes</NavLink>
-                            </li>
+                            {isStudent && <>
+                                <li>
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/selectedClasses">
+                                        <FaBook></FaBook>
+                                        Selected Classes</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/enrolledClasses">
+                                        <FaMoneyCheck></FaMoneyCheck>
+                                        Enrolled Classes</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/paymentHistory">
+                                        <FaPaypal></FaPaypal>
+                                        Payment History</NavLink>
+                                </li>
+                            </>}
+                            {/* For instructors */}
+                            {isInstructor && <>
+                                <li>
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/addClass">
+                                        <FaBook></FaBook>
+                                        Add class</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/enrolledClasses">
+                                        <FaMoneyCheck></FaMoneyCheck>
+                                        Enrolled Classes</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/paymentHistory">
+                                        <FaPaypal></FaPaypal>
+                                        Payment History</NavLink>
+                                </li>
+                            </>}
                         </div>
 
 

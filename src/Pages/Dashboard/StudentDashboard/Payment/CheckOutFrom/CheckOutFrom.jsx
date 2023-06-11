@@ -85,6 +85,7 @@ const CheckOutFrom = ({ price, paymentItem }) => {
             setTransactionId(paymentIntent.id);
             const payment = {
                 date: new Date(),
+                transactionId: paymentIntent.id,
                 cartId: _id,
                 classId,
                 image,

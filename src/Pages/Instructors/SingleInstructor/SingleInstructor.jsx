@@ -4,7 +4,7 @@ const SingleInstructor = ({ singleInstructor }) => {
     const { _id, name, email, image } = singleInstructor;
     return (
         <div className="relative">
-            <img src={image} alt="" />
+            <img className="w-full" src={image} alt="" />
             <div className="absolute top-0 left-0  w-full h-full bg-black bg-opacity-25">
                 <div className="absolute bottom-5 w-full ">
                     <h2 className="text-center  text-4xl text-white font-semibold">{name}</h2>
