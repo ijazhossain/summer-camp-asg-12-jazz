@@ -5,12 +5,12 @@ import SectionCover from "../Pages/Shared/SectionCover/SectionCover";
 import dashboardImg from "../assets/images/adminBg.jpg"
 import useAuth from "../hooks/useAuth";
 import userPic from '../assets/images/userPro.avif'
-import { FaBars, FaBook, FaMoneyCheck, FaPaypal } from "react-icons/fa";
+import { FaBars, FaBook, FaMoneyCheck, FaPaypal, FaTools } from "react-icons/fa";
 const DashboardLayout = () => {
     const { user } = useAuth();
     // console.log(user);
-    const isStudent = false;
-    const isInstructor = true;
+    const isInstructor = false;
+    const isAdmin = true;
     return (
         <div>
             <Header></Header>
@@ -37,7 +37,7 @@ const DashboardLayout = () => {
 
                         {/* For Students */}
                         <div className="space-y-4">
-                            {isStudent && <>
+                            {(!isAdmin && !isInstructor) && <>
                                 <li>
                                     <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/selectedClasses">
                                         <FaBook></FaBook>
@@ -68,6 +68,21 @@ const DashboardLayout = () => {
                                 </li>
 
                             </>}
+                            {/* For admin */}
+                            {
+                                isAdmin && <>
+                                    <li>
+                                        <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/manageClasses">
+                                            <FaTools></FaTools>
+                                            Manage Classes</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/inspectorClass">
+                                            <FaMoneyCheck></FaMoneyCheck>
+                                            Manage Users</NavLink>
+                                    </li>
+                                </>
+                            }
                         </div>
 
 
@@ -81,3 +96,12 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
+{/* <button onClick={() => handleApprove(item._id)}
+                                        className="capitalize block btn btn-xs cursor-pointer hover:bg-black mx-auto mb-2 bg-green-700 text-white ">approved</button>
+                                    <button disabled={item.status === 'pending' && "true"} className="capitalize block btn btn-xs cursor-pointer hover:bg-black mb-2 bg-red-900 mx-auto text-white ">Deny</button>
+                                    <button className="capitalize block btn btn-xs cursor-pointer bg-[#b38b37] text-white mx-auto hover:bg-black"> Send Feedback</button> */}
+
+
+                                    // <button disabled={item.status === 'approved' && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mx-auto mb-2 bg-green-400 text-white ">approved</button>
+                                    // <button disabled={item.status === 'pending' && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mb-2 bg-yellow-400 mx-auto text-white ">Deny</button>
+                                    // <button className="block btn btn-xs cursor-pointer bg-primary text-white mx-auto "> Send Feedback</button>

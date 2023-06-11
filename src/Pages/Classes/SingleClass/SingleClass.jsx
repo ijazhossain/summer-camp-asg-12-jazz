@@ -11,7 +11,7 @@ const SingleClass = ({ singleClass }) => {
     const navigate = useNavigate()
     // console.log(user);
     // console.log(singleClass);
-    const { _id, name, image, instructor, instructorEmail, price, description, availableSeats, enrolledStudents } = singleClass;
+    const { _id, name, image, instructor, instructorEmail, price, description, availableSeats, enrolledStudents, status } = singleClass || {};
     // console.log(_id, name, instructor, instructorEmail, price,  description, availableSeats);
 
     const handleSelect = (_id) => {
@@ -71,7 +71,10 @@ const SingleClass = ({ singleClass }) => {
             <div className='px-4'>
                 <h2 className="text-2xl my-5 font-semibold text-[#727475]">{name}</h2>
                 <p className="text-[#aba5a3] mb-5">{description}</p>
-                <p>Enrolled Students:{enrolledStudents}</p>
+                <div className='flex items-center justify-between mb-4'>
+                    <p className='text-sm text-[#727475] font-semibold'>Enrolled Students: {enrolledStudents}</p>
+                    <button className="btn btn-xs bg-green-500  text-white">{status}</button>
+                </div>
             </div>
             <div className='flex items-center justify-between bg-[#f9f9f9] p-4 mt-auto'>
                 <p className='text-[#aba5a3] text-lg'>{instructor}</p>

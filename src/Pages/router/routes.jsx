@@ -13,6 +13,7 @@ import EnrolledClasses from "../Dashboard/StudentDashboard/EnrolledClasses/Enrol
 import PaymentHistory from "../Dashboard/StudentDashboard/PaymentHistory/PaymentHistory";
 import AddClass from "../Dashboard/InstructorDashboard/AddClass/AddClass";
 import InspectorClass from "../Dashboard/InstructorDashboard/InspectorClass/InspectorClass";
+import ManageClasses from "../Dashboard/Admin/ManageClasses/ManageClasses";
 
 
 
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
                 path: 'inspectorClass',
                 element: <InspectorClass></InspectorClass>
 
+            },
+            // admin routes
+            {
+                path: 'manageClasses',
+                element: <ManageClasses></ManageClasses>
             }
         ]
     }
