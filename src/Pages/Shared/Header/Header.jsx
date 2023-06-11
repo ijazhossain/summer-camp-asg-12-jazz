@@ -34,17 +34,17 @@ const Header = () => {
                     </div>
                     <div className="navbar-center hidden lg:flex items-center">
                         <ul className="menu menu-horizontal px-1 lg:flex items-center">
-                            <p><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/">Home</Link></p>
-                            <p ><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/instructors">Instructors</Link></p>
-                            <p><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/classes">Classes</Link></p>
-                            <p ><Link className="text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
+                            <p><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/">Home</Link></p>
+                            <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/instructors">Instructors</Link></p>
+                            <p><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#a78051]" to="/classes">Classes</Link></p>
+                            <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
                             ">Dashboard</Link></p>
                             {
-                                user && <span className="cursor-pointer tooltip" data-tip={user?.displayName}><img className='w-[60px] h-60px border border-[#b37b38] rounded-full me-10' src={user.photoURL} alt="" /></span>
+                                user && <span className="cursor-pointer tooltip" data-tip={user?.displayName}><img className='w-[60px] h-60px border-2 border-[#b37b38] rounded-full me-10' src={user.photoURL} alt="" /></span>
                             }
-                            {!user ? <Link to="/login" className="me-10 btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Login</Link>
+                            {!user ? <Link to="/login" className="font-semibold me-10 btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Login</Link>
                                 :
-                                <button onClick={handleLogOut} className="btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Logout</button>
+                                <button onClick={handleLogOut} className="font-semibold btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Logout</button>
                             }
                         </ul>
                     </div>

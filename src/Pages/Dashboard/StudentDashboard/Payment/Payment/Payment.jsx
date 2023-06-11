@@ -3,6 +3,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useParams } from "react-router-dom";
 import useMyClasses from "../../../../../hooks/useMyClasses";
 import CheckOutFrom from "../CheckOutFrom/CheckOutFrom";
+import SectionTitle from "../../../../../components/SectionTitle/SectionTitle";
 const Payment = () => {
     const { id } = useParams();
     const [myClasses] = useMyClasses();
@@ -12,10 +13,12 @@ const Payment = () => {
     const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
     return (
         <div>
-            <h1 className="4xl">This is payment page</h1>
-            <Elements stripe={stripePromise}>
-                <CheckOutFrom price={price} paymentItem={paymentItem}></CheckOutFrom>
-            </Elements>
+            <SectionTitle>Payments</SectionTitle>
+            <div className="mt-12 w-[50%] mx-auto">
+                <Elements stripe={stripePromise}>
+                    <CheckOutFrom price={price} paymentItem={paymentItem}></CheckOutFrom>
+                </Elements>
+            </div>
         </div>
     );
 };

@@ -42,7 +42,7 @@ const EnrolledClasses = () => {
                                 <td>
                                     {item.instructor}
                                     <br />
-                                    <span className="badge badge-ghost badge-sm">{item.instructorEmail}</span>
+                                    <span className="badge badge-ghost badge-sm bg-[#b38b37] text-white">{item.instructorEmail}</span>
                                 </td>
 
                                 <th>

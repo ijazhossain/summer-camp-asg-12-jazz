@@ -3,14 +3,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import useAuth from "../../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
-import useMyClasses from "../../../../../hooks/useMyClasses";
 import Swal from "sweetalert2";
+
 import { useNavigate } from "react-router-dom";
-// import './CheckOutFrom.css'
+
 const CheckOutFrom = ({ price, paymentItem }) => {
-    const [, cartRefetch] = useMyClasses();
-    console.log(price, paymentItem);
-    const { _id, classId, image, description, instructor, name, studentEmail, instructorEmail } = paymentItem;
+    // console.log(price, paymentItem);
+    const { _id, classId, image, description, instructor, name, studentEmail, instructorEmail } = paymentItem || {};
     // console.log(_id, classId, image, description, instructor, name, price, studentEmail, instructorEmail);
     const stripe = useStripe();
     const elements = useElements();
@@ -21,6 +20,7 @@ const CheckOutFrom = ({ price, paymentItem }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const navigate = useNavigate();
+
 
     useEffect(() => {
         if (price > 0) {
@@ -114,7 +114,7 @@ const CheckOutFrom = ({ price, paymentItem }) => {
 
     }
     return (
-        <>
+        <div >
             <form className="w-2/3 m-8" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
@@ -132,13 +132,13 @@ const CheckOutFrom = ({ price, paymentItem }) => {
                         },
                     }}
                 />
-                <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
+                <button className="btn btn-primary btn-sm mt-4 flex items-center justify-center" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>
             {cardError && <p className="text-red-600">{cardError}</p>}
-            {transactionId && <p className="text-green-500">Transition complete with transitionId {transactionId}</p>}
-        </>
+            {transactionId && <p className="text-green-500 text-center">Transition complete with transitionId {transactionId}</p>}
+        </div>
     );
 };
 

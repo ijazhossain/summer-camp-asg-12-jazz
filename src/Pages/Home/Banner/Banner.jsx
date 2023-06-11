@@ -61,7 +61,7 @@ const Banner = () => {
                                 <h1 className="text-3xl lg:text-5xl mb-6 font-semibold ms-primary"> Learning Music With Easy Way</h1>
                                 <p className="text-white hidden sm:block leading-relaxed tracking-wide"> Join us for an immersive and inspiring experience, where young musicians aged 10 to 18 can explore their musical talents. Our daily workshops cover diverse genres and offer training in music theory, composition, instrument-specific masterclasses, vocal skills, and ensemble rehearsals. Led by experienced educators and industry professionals, this collaborative camp fosters growth and friendships.</p>
                                 <div className="mt-10 flex items-center">
-                                    <button className="rounded-lg  bg-transparent border border-[#b38b37] ms-primary hover:bg-[#b38b37] hover:text-white h-[56px] w-[167px]">Get Started</button>
+                                    <button className="rounded-lg  bg-transparent border border-[#b38b37] ms-primary hover:bg-[#b38b37] hover:text-white h-[56px] w-[167px]">Purchase</button>
 
                                 </div>
                             </div>

@@ -1,16 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Fraunces&family=Nunito+Sans&display=swap');
-
-body h1,
-body h2,
-body h3 {
-  font-family: 'Fraunces', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .ms-primary {
