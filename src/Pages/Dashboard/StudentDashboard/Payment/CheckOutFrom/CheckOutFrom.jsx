@@ -5,6 +5,7 @@ import useAuth from "../../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 import useMyClasses from "../../../../../hooks/useMyClasses";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 // import './CheckOutFrom.css'
 const CheckOutFrom = ({ price, paymentItem }) => {
     const [, cartRefetch] = useMyClasses();
@@ -19,6 +20,7 @@ const CheckOutFrom = ({ price, paymentItem }) => {
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (price > 0) {
@@ -82,6 +84,7 @@ const CheckOutFrom = ({ price, paymentItem }) => {
             // console.log(paymentIntent.id);
             setTransactionId(paymentIntent.id);
             const payment = {
+                date: new Date(),
                 cartId: _id,
                 classId,
                 image,
@@ -94,14 +97,16 @@ const CheckOutFrom = ({ price, paymentItem }) => {
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     if (res.data.cartDeletedResult.deletedCount > 0 && res.data.insertResult.insertedId && res.data.seatUpdate.modifiedCount > 0) {
                         Swal.fire({
+
                             icon: 'success',
                             title: 'Success',
-                            text: 'Payment Successful',
+                            text: `Payment Successful, Transaction id: ${paymentIntent.id}`,
 
                         })
+                        navigate('/dashboard/selectedClasses')
                     }
                 })
         }

@@ -1,9 +1,29 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
+import useMyClasses from "../../../../../hooks/useMyClasses";
+import Swal from "sweetalert2";
 
 
 const SingleSelectedClass = ({ selectedClass }) => {
+    const [, cartRefetch] = useMyClasses()
     // console.log(selectedClass);
     const { _id, classId, image, instructor, name, studentEmail, price, instructorEmail, description } = selectedClass;
+    const handleDelete = (_id) => {
+        console.log(_id);
+        axios.delete(`http://localhost:5000/carts/${_id}`)
+            .then(res => {
+                console.log(res);
+                if (res.data.deletedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success...',
+                        text: 'Class removed successful',
+
+                    })
+                    cartRefetch()
+                }
+            })
+    }
     return (
         <div className="card  bg-[#e9e9e9] border shadow-lg ">
             <figure><img src={image} alt="class pic" /></figure>
@@ -18,7 +38,7 @@ const SingleSelectedClass = ({ selectedClass }) => {
                 <div className="card-actions justify-end">
                     <Link to={`/dashboard/payment/${_id}`}>
                         <button className="btn btn-xs bg-[#e9cc74] text-white">Pay</button></Link>
-                    <button className="btn btn-xs bg-red-400 text-white" >Remove</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-xs bg-red-400 text-white" >Remove</button>
                 </div>
             </div>
         </div>

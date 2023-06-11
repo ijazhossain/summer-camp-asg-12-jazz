@@ -5,8 +5,8 @@ import useMyClasses from "../../../../../hooks/useMyClasses";
 import CheckOutFrom from "../CheckOutFrom/CheckOutFrom";
 const Payment = () => {
     const { id } = useParams();
-    const [myClasses, refetch] = useMyClasses();
-    console.log(id);
+    const [myClasses] = useMyClasses();
+    // console.log(id);
     const paymentItem = myClasses.find(item => item._id === id)
     const price = paymentItem?.price;
     const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
@@ -14,7 +14,7 @@ const Payment = () => {
         <div>
             <h1 className="4xl">This is payment page</h1>
             <Elements stripe={stripePromise}>
-            <CheckOutFrom price={price} paymentItem={paymentItem}></CheckOutFrom>
+                <CheckOutFrom price={price} paymentItem={paymentItem}></CheckOutFrom>
             </Elements>
         </div>
     );

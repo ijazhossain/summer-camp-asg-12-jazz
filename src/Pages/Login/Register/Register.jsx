@@ -11,7 +11,7 @@ import { useState } from "react";
 
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useAuth();
+    const { createUser, updateUserProfile, setReload } = useAuth();
     const [error, setError] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
@@ -26,6 +26,7 @@ const Register = () => {
                 console.log(result.user)
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
+                        setReload(Date.now())
                         const newUser = {
                             name: data?.name,
                             email: data?.email,

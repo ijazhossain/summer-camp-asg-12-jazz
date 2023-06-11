@@ -3,8 +3,8 @@ import useMyClasses from "../../../../../hooks/useMyClasses";
 import SingleSelectedClass from "../SingleSelectedClass/SingleSelectedClass";
 
 const SelectedClasses = () => {
-    const [myClasses, refetch] = useMyClasses()
-    console.log(myClasses);
+    const [myClasses] = useMyClasses()
+    // console.log(myClasses);
     return (
         <div>
             <SectionTitle>Selected Classes</SectionTitle>

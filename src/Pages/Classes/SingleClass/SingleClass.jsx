@@ -3,7 +3,7 @@ import axios from 'axios';
 import seatIcon from '../../../assets/images/icon-availability.svg'
 import useAuth from '../../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import useClasses from '../../../hooks/useClasses';
+
 import { useLocation, useNavigate } from 'react-router-dom';
 const SingleClass = ({ singleClass }) => {
     const { user } = useAuth();
@@ -11,8 +11,7 @@ const SingleClass = ({ singleClass }) => {
     const navigate = useNavigate()
     // console.log(user);
     // console.log(singleClass);
-    const [, refetch,] = useClasses();
-    const { _id, name, image, instructor, instructorEmail, price, description, availableSeats } = singleClass;
+    const { _id, name, image, instructor, instructorEmail, price, description, availableSeats, enrolledStudents } = singleClass;
     // console.log(_id, name, instructor, instructorEmail, price,  description, availableSeats);
 
     const handleSelect = (_id) => {
@@ -33,9 +32,8 @@ const SingleClass = ({ singleClass }) => {
             }
             axios.post('http://localhost:5000/carts', cartItem)
                 .then(data => {
-                    console.log(data);
-                    if (data.data.cartInsertion.insertedId && data.data.seatUpdate.modifiedCount > 0) {
-                        refetch()
+                    // console.log(data);
+                    if (data.data.insertedId) {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -73,12 +71,14 @@ const SingleClass = ({ singleClass }) => {
             <div className='px-4'>
                 <h2 className="text-2xl my-5 font-semibold text-[#727475]">{name}</h2>
                 <p className="text-[#aba5a3] mb-5">{description}</p>
+                <p>Enrolled Students:{enrolledStudents}</p>
             </div>
             <div className='flex items-center justify-between bg-[#f9f9f9] p-4 mt-auto'>
                 <p className='text-[#aba5a3] text-lg'>{instructor}</p>
                 <div className='flex items items-center justify-center'>
                     <img className='w-[23px] mr-2' src={seatIcon} alt="" />
                     <p className='text-[#aba5a3]'>{availableSeats} seats</p>
+
                 </div>
                 <button onClick={() => handleSelect(_id)} disabled={availableSeats === 0 ? true : false} className='btn btn-sm bg-[#f2c63f] text-white capitalize'>Select</button>
             </div>

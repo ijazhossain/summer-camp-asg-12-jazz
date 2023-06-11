@@ -7,7 +7,7 @@ import SingleClass from "../SingleClass/SingleClass";
 
 const Classes = () => {
     const [classes] = useClasses();
-    console.log(classes);
+    // console.log(classes);
     return (
         <div className="">
             <Helmet>

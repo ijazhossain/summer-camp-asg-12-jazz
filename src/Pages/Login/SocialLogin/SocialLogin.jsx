@@ -13,7 +13,7 @@ const SocialLogin = ({ children }) => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log('google', loggedUser);
+                // console.log('google', loggedUser);
                 const newUser = {
                     name: loggedUser?.displayName,
                     email: loggedUser?.email,

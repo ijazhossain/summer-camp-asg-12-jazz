@@ -1,11 +1,11 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Pages/Shared/Footer/Footer";
 import Header from "../Pages/Shared/Header/Header";
 import SectionCover from "../Pages/Shared/SectionCover/SectionCover";
 import dashboardImg from "../assets/images/adminBg.jpg"
 import useAuth from "../hooks/useAuth";
 import userPic from '../assets/images/userPro.avif'
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaBook, FaMoneyCheck } from "react-icons/fa";
 const DashboardLayout = () => {
     const { user } = useAuth();
     // console.log(user);
@@ -26,13 +26,27 @@ const DashboardLayout = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full  text-base-content bg-[#aba5a3] text-center">
 
-                        {user?.photoURL && <img className="rounded-full mx-auto w-[100px] h-[100px]" src={`${user?.photoURL}`} alt="" />}
-                        {!user?.photoURL && <img className="rounded-full mx-auto w-[100px] h-[100px]" src={`${userPic}`} alt="" />}
+                        <div className="my-5">
+                            {user?.photoURL && <img className="rounded-full border-[3px]  border-[#b38b37] mx-auto w-[100px] h-[100px]" src={`${user?.photoURL}`} alt="" />}
+                            {!user?.photoURL && <img className="rounded-full mx-auto w-[100px] h-[100px]" src={`${userPic}`} alt="" />}
+                            <p className="mt-5 font-semibold text-xl">{user?.displayName && user?.displayName}</p>
+                            <p className="mt-2 font-semibold text-xs">Email: {user?.email && user?.email}</p>
+                        </div>
 
                         {/* Sidebar content here */}
-                        <Link className="focus:text-[#b38b37] text-white " to="/dashboard/selectedClasses">Selected Classes</Link>
-                        <Link className="focus:text-[#b38b37] text-white " to="/dashboard/selectedClasses">Selected Classes</Link>
-                        <Link className="focus:text-[#b38b37] text-white " to="/dashboard/selectedClasses">Selected Classes</Link>
+                        <div className="space-y-4">
+                            <li>
+                                <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/selectedClasses">
+                                    <FaBook></FaBook>
+                                    My selected Classes</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="flex items-center justify-center focus:text-[#b38b37] text-white text-center " to="/dashboard/enrolledClasses">
+                                    <FaMoneyCheck></FaMoneyCheck>
+                                    My enrolled Classes</NavLink>
+                            </li>
+                        </div>
+
 
                     </ul>
 
