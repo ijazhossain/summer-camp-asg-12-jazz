@@ -16,7 +16,7 @@ const PopularClasses = () => {
                 setLoading(false)
             })
     }, [])
-    console.log(popularClasses);
+    // console.log(popularClasses);
     if (loading) {
         return <Spinner></Spinner>
     }
