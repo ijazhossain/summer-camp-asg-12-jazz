@@ -18,7 +18,7 @@ const ManageUsers = () => {
     // console.log(users);
     const handleRole = (item, userRole) => {
         console.log(item, userRole);
-        axios.patch(`http://localhost:5000/users/admin/${item._id}`, { role: userRole })
+        axios.patch(`https://summer-camp-server-asg-12.vercel.app/users/admin/${item._id}`, { role: userRole })
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {
@@ -76,7 +76,7 @@ const ManageUsers = () => {
                                 <td className="text-center capitalize text-blue-500 font-semibold">{item?.role ? item?.role : 'student'}</td>
                                 <td><button onClick={() => handleRole(item, 'admin')} disabled={(item?.role === 'admin') && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mx-auto mb-2 bg-red-500 text-white ">Make Admin</button></td>
                                 <td>
-                                    <button onClick={() => handleRole(item, 'instructor')} disabled={(item?.role === 'instructor') && "true"} className="block btn btn-xs cursor-pointer hover:bg-black bg-green-500  mb-2  mx-auto text-white ">Moke instructor</button>
+                                    <button onClick={() => handleRole(item, 'instructor')} disabled={(item?.role === 'instructor') && "true"} className="block btn btn-xs cursor-pointer hover:bg-black bg-green-500  mb-2  mx-auto text-white ">Make instructor</button>
                                 </td>
 
                             </tr>)

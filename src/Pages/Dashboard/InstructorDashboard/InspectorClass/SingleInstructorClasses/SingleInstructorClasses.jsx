@@ -1,5 +1,5 @@
 const SingleInstructorClasses = ({ item }) => {
-    console.log(item);
+    // console.log(item);
     const { image, instructor, name, instructorEmail, description, enrolledStudents, price, status, feedback } = item;
     return (
         <div className="card bg-[#e9e9e9] border shadow-lg ">

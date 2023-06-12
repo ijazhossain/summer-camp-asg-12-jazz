@@ -30,7 +30,7 @@ const SingleClass = ({ singleClass }) => {
                 description,
                 availableSeats
             }
-            axios.post('http://localhost:5000/carts', cartItem)
+            axios.post('https://summer-camp-server-asg-12.vercel.app/carts', cartItem)
                 .then(data => {
                     // console.log(data);
                     if (data.data.insertedId) {

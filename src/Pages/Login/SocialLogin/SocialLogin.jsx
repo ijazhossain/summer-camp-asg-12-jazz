@@ -20,9 +20,9 @@ const SocialLogin = ({ children }) => {
                     image: loggedUser?.photoURL,
 
                 }
-                axios.post('http://localhost:5000/users', newUser)
+                axios.post('https://summer-camp-server-asg-12.vercel.app/users', newUser)
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.data.insertedId) {
                             Swal.fire({
                                 icon: 'success',

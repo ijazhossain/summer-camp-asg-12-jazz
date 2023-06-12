@@ -10,7 +10,7 @@ const SingleSelectedClass = ({ selectedClass }) => {
     const { _id, classId, image, instructor, name, studentEmail, price, instructorEmail, description } = selectedClass;
     const handleDelete = (_id) => {
         console.log(_id);
-        axios.delete(`http://localhost:5000/carts/${_id}`)
+        axios.delete(`https://summer-camp-server-asg-12.vercel.app/carts/${_id}`)
             .then(res => {
                 console.log(res);
                 if (res.data.deletedCount > 0) {

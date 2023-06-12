@@ -16,6 +16,8 @@ import InspectorClass from "../Dashboard/InstructorDashboard/InspectorClass/Insp
 import ManageClasses from "../Dashboard/Admin/ManageClasses/ManageClasses";
 import Feedback from "../Dashboard/Admin/Feedback/Feedback";
 import ManageUsers from "../Dashboard/Admin/ManageUsers/ManageUsers";
+import AdminRoute from "../../Routes/AdminRoute";
+import InstructorRoute from "../../Routes/InstructorRoute";
 
 
 
@@ -73,25 +75,25 @@ const router = createBrowserRouter([
             // inspector route
             {
                 path: 'addClass',
-                element: <AddClass></AddClass>
+                element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
             },
             {
                 path: 'inspectorClass',
-                element: <InspectorClass></InspectorClass>
+                element: <InstructorRoute><InspectorClass></InspectorClass></InstructorRoute>
 
             },
             // admin routes
             {
                 path: 'manageClasses',
-                element: <ManageClasses></ManageClasses>
+                element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
             },
             {
                 path: 'feedback/:id',
-                element: <Feedback></Feedback>
+                element: <AdminRoute><Feedback></Feedback></AdminRoute>
             },
             {
                 path: 'manageUsers',
-                element: <ManageUsers></ManageUsers>
+                element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             }
         ]
     }

@@ -6,11 +6,16 @@ import dashboardImg from "../assets/images/adminBg.jpg"
 import useAuth from "../hooks/useAuth";
 import userPic from '../assets/images/userPro.avif'
 import { FaBars, FaBook, FaMoneyCheck, FaPaypal, FaTools, FaUserShield } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
+import useIsInstructor from "../hooks/useIsInstructor";
 const DashboardLayout = () => {
     const { user } = useAuth();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useIsInstructor()
+    // console.log(isAdmin, isInstructor);
     // console.log(user);
-    const isInstructor = false;
-    const isAdmin = true;
+    // const isInstructor = false;
+    // const isAdmin = true;
     return (
         <div>
             <Header></Header>

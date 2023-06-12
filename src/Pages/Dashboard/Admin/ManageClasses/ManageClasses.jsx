@@ -9,7 +9,7 @@ const ManageClasses = () => {
     // console.log(allClasses);
     const handleStatus = (id, stat) => {
         console.log(id, stat);
-        axios.patch(`http://localhost:5000/classes/admin/${id}`, { status: stat })
+        axios.patch(`https://summer-camp-server-asg-12.vercel.app/classes/admin/${id}`, { status: stat })
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {
@@ -35,12 +35,12 @@ const ManageClasses = () => {
                         <tr>
                             <th className="font-semibold text-base text-white">#</th>
                             <th className="font-semibold text-base text-white">Class Image</th>
-                            <th className="font-semibold text-base text-white">Name</th>
+                            <th className="font-semibold text-base text-white name">Name</th>
                             <th className="font-semibold text-base text-white">Instructor info</th>
                             <th className="font-semibold text-base text-white">Available seats</th>
                             <th className="font-semibold text-base text-white">Price</th>
                             <th className="font-semibold text-base text-white">Status</th>
-                            <th className="font-semibold text-base text-white">Action</th>
+                            <th className="font-semibold text-base text-white text-center">Action</th>
 
                         </tr>
                     </thead>

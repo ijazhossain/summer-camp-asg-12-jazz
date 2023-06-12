@@ -1,6 +1,6 @@
-import { FaBeer, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSkype, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSkype, FaTwitter } from "react-icons/fa";
 const SingleInstructor = ({ singleInstructor }) => {
-    console.log(singleInstructor);
+    // console.log(singleInstructor);
     const { _id, name, email, image } = singleInstructor;
     return (
         <div className="relative">

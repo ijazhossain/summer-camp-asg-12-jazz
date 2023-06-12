@@ -12,7 +12,7 @@ const Feedback = () => {
         console.log(data);
         const { feedback } = data;
         console.log(feedback);
-        axios.patch(`http://localhost:5000/classes/updateFeedback/admin/${id}`, { feedback: feedback })
+        axios.patch(`https://summer-camp-server-asg-12.vercel.app/classes/updateFeedback/admin/${id}`, { feedback: feedback })
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {

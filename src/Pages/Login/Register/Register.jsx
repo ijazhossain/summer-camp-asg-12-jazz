@@ -35,7 +35,7 @@ const Register = () => {
                             address: data?.address,
                             gender: data?.gender
                         }
-                        axios.post('http://localhost:5000/users', newUser)
+                        axios.post('https://summer-camp-server-asg-12.vercel.app/users', newUser)
                             .then(data => {
                                 console.log(data);
                                 if (data.data.insertedId) {

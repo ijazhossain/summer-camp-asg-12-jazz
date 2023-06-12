@@ -16,7 +16,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         setError('')
-        console.log(data)
+        // console.log(data)
         login(data.email, data.password)
             .then(result => {
                 console.log(result.user);
