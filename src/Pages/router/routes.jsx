@@ -15,6 +15,7 @@ import AddClass from "../Dashboard/InstructorDashboard/AddClass/AddClass";
 import InspectorClass from "../Dashboard/InstructorDashboard/InspectorClass/InspectorClass";
 import ManageClasses from "../Dashboard/Admin/ManageClasses/ManageClasses";
 import Feedback from "../Dashboard/Admin/Feedback/Feedback";
+import ManageUsers from "../Dashboard/Admin/ManageUsers/ManageUsers";
 
 
 
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
             {
                 path: 'feedback/:id',
                 element: <Feedback></Feedback>
+            },
+            {
+                path: 'manageUsers',
+                element: <ManageUsers></ManageUsers>
             }
         ]
     }

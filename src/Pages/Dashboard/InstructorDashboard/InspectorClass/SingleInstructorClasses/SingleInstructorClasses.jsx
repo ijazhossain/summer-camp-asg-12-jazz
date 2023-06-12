@@ -13,7 +13,7 @@ const SingleInstructorClasses = ({ item }) => {
                 <p className="text-xs mt-0">Email: {instructorEmail}</p>
                 <p className="tooltip text-xs text-start mb-3" data-tip={description}>{description.slice(0, 100) + '...'}</p>
                 <p className="text-xs mt-0">Enrolled students: {enrolledStudents}</p>
-                {feedback && <p className='text-[#b38b37] text-xs '>Feedback: {feedback}</p>}
+                {(feedback && status === 'denied') && <p className='text-[#b38b37] text-xs '>Feedback: {feedback}</p>}
                 <div className="card-actions justify-end mt-5">
                     <button className={`btn btn-xs ${status === 'approved' ? 'bg-green-500' : status === 'pending' ? 'bg-yellow-500' : status === 'denied' ? 'bg-red-500' : ''}  text-white`}>{status}</button>
                     <button className="btn btn-xs bg-[#b38b37]  text-white">update</button>
