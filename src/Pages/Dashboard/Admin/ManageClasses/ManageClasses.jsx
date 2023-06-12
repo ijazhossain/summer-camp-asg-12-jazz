@@ -2,6 +2,7 @@ import axios from "axios";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import useAllClasses from "../../../../hooks/useAllClasses";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
     const [allClasses, refetch] = useAllClasses()
@@ -22,6 +23,11 @@ const ManageClasses = () => {
                     refetch()
                 }
             })
+    }
+    const handleFeedback = (id) => {
+        console.log(id);
+
+
     }
     return (
         <div className="w-[90%] mx-auto">
@@ -71,7 +77,8 @@ const ManageClasses = () => {
                                 <th>
                                     <button onClick={() => handleStatus(item._id, 'approved')} disabled={(item.status === 'approved' || item.status === 'denied') && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mx-auto mb-2 bg-green-400 text-white ">approved</button>
                                     <button onClick={() => handleStatus(item._id, 'denied')} disabled={(item.status === 'approved' || item.status === 'denied') && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mb-2 bg-red-400 mx-auto text-white ">Deny</button>
-                                    <button className="block btn btn-xs cursor-pointer bg-[#b38b37] text-white mx-auto "> Send Feedback</button>
+                                    <Link to={`/dashboard/feedback/${item._id}`}>
+                                        <button onClick={() => handleFeedback(item._id)} className="block btn btn-xs cursor-pointer bg-[#b38b37] text-white mx-auto "> Send Feedback</button></Link>
                                 </th>
                             </tr>)
                         }

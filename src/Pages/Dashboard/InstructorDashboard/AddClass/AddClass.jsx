@@ -56,9 +56,7 @@ const AddClass = () => {
                 }
             })
 
-        // const newClass = {
-        //     data
-        // }
+
     }
     return (
         <div className="w-[90%] mx-auto mt-12"
@@ -167,7 +165,7 @@ const AddClass = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <input type="submit" className="btn hover:bg-black text-white capitalize bg-[#b37b38]" value="Register" />
+                    <input type="submit" className="btn hover:bg-black text-white capitalize bg-[#b37b38]" value="Add Class" />
 
                 </div>
             </form>

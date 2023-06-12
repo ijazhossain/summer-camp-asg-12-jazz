@@ -14,6 +14,8 @@ import PaymentHistory from "../Dashboard/StudentDashboard/PaymentHistory/Payment
 import AddClass from "../Dashboard/InstructorDashboard/AddClass/AddClass";
 import InspectorClass from "../Dashboard/InstructorDashboard/InspectorClass/InspectorClass";
 import ManageClasses from "../Dashboard/Admin/ManageClasses/ManageClasses";
+import Feedback from "../Dashboard/Admin/Feedback/Feedback";
+
 
 
 
@@ -81,6 +83,10 @@ const router = createBrowserRouter([
             {
                 path: 'manageClasses',
                 element: <ManageClasses></ManageClasses>
+            },
+            {
+                path: 'feedback/:id',
+                element: <Feedback></Feedback>
             }
         ]
     }

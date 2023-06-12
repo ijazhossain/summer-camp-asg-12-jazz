@@ -9,8 +9,8 @@ import { FaBars, FaBook, FaMoneyCheck, FaPaypal, FaTools } from "react-icons/fa"
 const DashboardLayout = () => {
     const { user } = useAuth();
     // console.log(user);
-    const isInstructor = false;
-    const isAdmin = true;
+    const isInstructor = true;
+    const isAdmin = false;
     return (
         <div>
             <Header></Header>
@@ -96,12 +96,3 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
-{/* <button onClick={() => handleApprove(item._id)}
-                                        className="capitalize block btn btn-xs cursor-pointer hover:bg-black mx-auto mb-2 bg-green-700 text-white ">approved</button>
-                                    <button disabled={item.status === 'pending' && "true"} className="capitalize block btn btn-xs cursor-pointer hover:bg-black mb-2 bg-red-900 mx-auto text-white ">Deny</button>
-                                    <button className="capitalize block btn btn-xs cursor-pointer bg-[#b38b37] text-white mx-auto hover:bg-black"> Send Feedback</button> */}
-
-
-                                    // <button disabled={item.status === 'approved' && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mx-auto mb-2 bg-green-400 text-white ">approved</button>
-                                    // <button disabled={item.status === 'pending' && "true"} className="block btn btn-xs cursor-pointer hover:bg-black mb-2 bg-yellow-400 mx-auto text-white ">Deny</button>
-                                    // <button className="block btn btn-xs cursor-pointer bg-primary text-white mx-auto "> Send Feedback</button>
