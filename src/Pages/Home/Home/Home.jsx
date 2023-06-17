@@ -4,6 +4,7 @@ import PopularClasses from "../PopularClasses/PopulaeClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors/PopularInstructors";
 import Introduction from "../Introduction/Introduction";
 import Paralex from "../Paralex/Paralex";
+import Support from "../Support/Support";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
                 <title>Musicine | Home</title>
             </Helmet>
             <Banner></Banner>
+            <Support></Support>
             <Introduction></Introduction>
             <PopularClasses></PopularClasses>
             <Paralex></Paralex>
