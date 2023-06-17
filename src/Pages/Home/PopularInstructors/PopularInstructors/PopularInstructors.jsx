@@ -22,9 +22,9 @@ const PopularInstructors = () => {
         return <Spinner></Spinner>
     }
     return (
-        <Slide direction="right" duration="2000" className="my-24" triggerOnce='true'>
+        <Slide direction="right" duration="2000" className="my-12 lg:my-24" triggerOnce='true'>
             <div className="w-[80%] mx-auto">
-                <HomeSectionTitle>Popular Instructors</HomeSectionTitle>
+                <HomeSectionTitle title="Meet Our Instructor" subTitle="Our Teachers" description="Discover a team of exceptional instructors at Musicine Summer Campaining Music School. From Grammy-nominated artists to renowned performers, their expertise will elevate your musical journey. Learn from the best in the industry, gain valuable insights, and excel in your passion for music."></HomeSectionTitle>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12" >
                     {

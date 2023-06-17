@@ -1,5 +1,5 @@
 const SinglePopularInstructor = ({ item }) => {
-    const { image, name, email, address } = item;
+    const { image, name, email } = item;
     return (
         <div className="card bg-base-100">
             <figure className="px-10 pt-10">
@@ -7,9 +7,7 @@ const SinglePopularInstructor = ({ item }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>{email}</p>
-                <p>{address}</p>
-
+                <p className="text-[#b38b37]">{email}</p>
             </div>
         </div>
     );

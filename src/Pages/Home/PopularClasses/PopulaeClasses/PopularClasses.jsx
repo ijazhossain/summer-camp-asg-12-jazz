@@ -23,8 +23,8 @@ const PopularClasses = () => {
     }
     return (
 
-        <div className="w-[90%] lg:w-[80%] mx-auto container">
-            <HomeSectionTitle subTitle="Our Class" title="Our Popular Class" description="Explore a diverse selection of courses at Musicine Summer Campaining Music School. From Guitar Grooves to Percussion Powerhouse and Vocal Vibrations, ignite your musical passion. Learn, create, and perform with fellow enthusiasts in an inspiring environment. Unleash your potential and experience the joy of music this summer."></HomeSectionTitle>
+        <div className="w-[90%] lg:w-[80%] mx-auto container  my-12 lg:my-24 ">
+            <HomeSectionTitle subTitle="Our Class" title="Our Popular Class" description="Explore a diverse selection of courses at Musicine Summer Campaining Music School. From Guitar Grooves to Percussion Powerhouse and Vocal Vibrations, ignite your musical passion. Learn, create, and perform with fellow enthusiasts in an inspiring environment."></HomeSectionTitle>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16" >
                 {
                     popularClasses.slice(0, 6).map(item => <SinglePopularClass

@@ -5,6 +5,7 @@ import PopularInstructors from "../PopularInstructors/PopularInstructors/Popular
 import Introduction from "../Introduction/Introduction";
 import Paralex from "../Paralex/Paralex";
 import Support from "../Support/Support";
+import Programme from "../Programme/Programme";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
             <Introduction></Introduction>
             <PopularClasses></PopularClasses>
             <Paralex></Paralex>
+            <Programme></Programme>
             <PopularInstructors></PopularInstructors>
         </div>
     );
