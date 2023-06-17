@@ -1,7 +1,7 @@
 const SinglePopularInstructor = ({ item }) => {
     const { image, name, email, address } = item;
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100">
             <figure className="px-10 pt-10">
                 <img src={image} className="rounded-xl" />
             </figure>

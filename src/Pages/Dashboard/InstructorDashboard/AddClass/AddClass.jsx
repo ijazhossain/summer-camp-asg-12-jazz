@@ -3,6 +3,7 @@ import { FaExclamationCircle } from "react-icons/fa";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 const image_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 // console.log(image_hosting_token);
 
@@ -61,6 +62,9 @@ const AddClass = () => {
     return (
         <div className="w-[90%] mx-auto mt-12"
         >
+            <Helmet>
+                <title>Musicine | Instructor Add Class</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
                 <h2 className="text-3xl text-[#727475] font-semibold"> Please Add Your Class</h2>
                 <p className="text-xs text-[#aba5a3]">Let&apos;s get started</p>

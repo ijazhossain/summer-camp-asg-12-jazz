@@ -3,6 +3,7 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -35,6 +36,9 @@ const ManageUsers = () => {
     }
     return (
         <div className="w-[90%] mx-auto">
+            <Helmet>
+                <title>Musicine | Manage Users</title>
+            </Helmet>
             <SectionTitle>Manage users</SectionTitle>
             <div className="overflow-x-auto mt-12">
                 <table className="table  table-zebra">

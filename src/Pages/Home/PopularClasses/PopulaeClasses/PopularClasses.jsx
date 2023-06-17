@@ -3,6 +3,7 @@ import HomeSectionTitle from "../../../../components/HomeSectionTitle/HomeSectio
 import useClasses from "../../../../hooks/useClasses";
 import Spinner from "../../../Shared/Spinner/Spinner";
 import SinglePopularClass from "../SinglePopularClass/SinglePopularClass";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const PopularClasses = () => {
     const [popularClasses, setPopularClasses] = useState([])
@@ -21,6 +22,7 @@ const PopularClasses = () => {
         return <Spinner></Spinner>
     }
     return (
+
         <div className="w-[80%] mx-auto">
             <HomeSectionTitle>Popular Classes</HomeSectionTitle>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" >
@@ -32,6 +34,7 @@ const PopularClasses = () => {
             </div>
 
         </div>
+
     );
 };
 

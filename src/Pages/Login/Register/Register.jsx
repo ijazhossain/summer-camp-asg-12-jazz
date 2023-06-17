@@ -8,9 +8,11 @@ import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
+
     const { createUser, updateUserProfile, setReload } = useAuth();
     const [error, setError] = useState('')
     const navigate = useNavigate();
@@ -59,8 +61,11 @@ const Register = () => {
     };
     return (
         <div>
+            <Helmet>
+                <title>Musicine | Register</title>
+            </Helmet>
             <SectionCover img={registerImg} title="Register"></SectionCover>
-            <div className="container w-[50%] mx-auto text-center">
+            <div className="container lg:w-[50%] mx-auto text-center">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
                     <h2 className="text-3xl text-[#727475] font-semibold">Create an account</h2>
                     <p className="text-xs text-[#aba5a3]">Let&apos;s get started</p>

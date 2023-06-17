@@ -18,6 +18,7 @@ import Feedback from "../Dashboard/Admin/Feedback/Feedback";
 import ManageUsers from "../Dashboard/Admin/ManageUsers/ManageUsers";
 import AdminRoute from "../../Routes/AdminRoute";
 import InstructorRoute from "../../Routes/InstructorRoute";
+import NotFound from "../Shared/NotFound/NotFound";
 
 
 
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
                 element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ])
 export default router;

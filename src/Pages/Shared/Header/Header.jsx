@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../../../../src/assets/images/footer-logo.png'
 import useAuth from "../../../hooks/useAuth";
 import useAdmin from "../../../hooks/useAdmin";
@@ -13,9 +13,14 @@ const Header = () => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useIsInstructor()
     // console.log(isAdmin, isInstructor);
+    // const isAdmin = true;
+    // const isInstructor = false;
+    const navigate = useNavigate()
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                navigate('/')
+            })
             .catch(error => {
                 console.log(error.message);
             })
@@ -39,12 +44,13 @@ const Header = () => {
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
-                            <ul tabIndex={0} className="menu menu-lg dropdown-content mt-3 p-2 shadow w-[450px] rounded-box text-center py-4 bg-[#727475] space-y-3">
+                            <ul tabIndex={0} className="menu menu-lg dropdown-content mt-3 p-2 shadow w-[300px] rounded-box text-center py-4 bg-[#727475] space-y-3">
                                 <p><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/">Home</Link></p>
                                 <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/instructors">Instructors</Link></p>
                                 <p><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#a78051]" to="/classes">Classes</Link></p>
                                 {/*  student link */}
-                                {(!isAdmin && !isInstructor) && <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
+
+                                {(!isAdmin && !isInstructor && user) && <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
                             ">Dashboard</Link></p>}
                                 {/* admin link */}
                                 {isAdmin && <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/manageClasses
@@ -74,8 +80,8 @@ const Header = () => {
                             <p><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/">Home</Link></p>
                             <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/instructors">Instructors</Link></p>
                             <p><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#a78051]" to="/classes">Classes</Link></p>
-                            {/*  student link */}
-                            {(!isAdmin && !isInstructor) && <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
+
+                            {(!isAdmin && !isInstructor && user) && <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/selectedClasses
                             ">Dashboard</Link></p>}
                             {/* admin link */}
                             {isAdmin && <p ><Link className="font-semibold text-white me-10 text-[17px] focus:text-[#b37b38]" to="/dashboard/manageClasses
@@ -89,7 +95,7 @@ const Header = () => {
                                 user && <span className="cursor-pointer tooltip" data-tip={user?.displayName}><img className='w-[60px] h-60px border-2 border-[#b37b38] rounded-full me-10' src={user.photoURL} alt="" /></span>
                             }
                             {/* swap */}
-                            <label className="swap swap-rotate">
+                            <label className="swap swap-rotate text-[#b37b38] rounded-full text-xs">
 
                                 {/* this hidden checkbox controls the state */}
                                 <input type="checkbox" onChange={handleToggle}
@@ -103,7 +109,9 @@ const Header = () => {
                                 <svg className="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
 
                             </label>
-                            {!user ? <Link to="/login" className="font-semibold me-10 btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Login</Link>
+
+
+                            {!user ? <Link to="/login" className="font-semibold btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Login</Link>
                                 :
                                 <button onClick={handleLogOut} className="font-semibold btn px-10 capitalize hover:border-none hover:bg-[#b37b38] hover:text-white bg-transparent border border-[#b38b37] text-white ms-5">Logout</button>
                             }

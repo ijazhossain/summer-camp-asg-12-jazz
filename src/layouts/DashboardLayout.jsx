@@ -12,7 +12,7 @@ const DashboardLayout = () => {
     const { user } = useAuth();
     const [isAdmin] = useAdmin();
     const [isInstructor] = useIsInstructor()
-    // console.log(isAdmin, isInstructor);
+    console.log(isAdmin, isInstructor);
     // console.log(user);
     // const isInstructor = false;
     // const isAdmin = true;
@@ -20,7 +20,7 @@ const DashboardLayout = () => {
         <div>
             <Header></Header>
             <SectionCover img={dashboardImg} title="DashBoard"></SectionCover>
-            <div className="drawer lg:drawer-open">
+            <div className="drawer lg:drawer-open  ">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     <label htmlFor="my-drawer-2" className="btn mt-12 me-8 text-white bg-[#d1a054] hover:bg-black  ms-auto lg:hidden">

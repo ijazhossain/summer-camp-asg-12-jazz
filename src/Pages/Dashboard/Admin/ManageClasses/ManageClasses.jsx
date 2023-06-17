@@ -3,6 +3,7 @@ import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import useAllClasses from "../../../../hooks/useAllClasses";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ManageClasses = () => {
     const [allClasses, refetch] = useAllClasses()
@@ -27,7 +28,10 @@ const ManageClasses = () => {
 
     return (
         <div className="w-[90%] mx-auto">
-            <SectionTitle>Manage Classes</SectionTitle>
+            <Helmet>
+                <title>Musicine | Manage Classes</title>
+            </Helmet>
+            <h1 className="container w-50% mx-auto text-xl lg:text-4xl text-center text-[#727475] mt-12 font-semibold"> Manage Classes</h1>
             <div className="overflow-x-auto mt-12">
                 <table className="table  table-zebra">
                     {/* head */}

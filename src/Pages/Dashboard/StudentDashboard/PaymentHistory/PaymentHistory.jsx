@@ -1,13 +1,18 @@
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import useEnrolledClasses from "../../../../hooks/useEnrolledClasses";
 
 
 
 const PaymentHistory = () => {
+
     const [paidClasses] = useEnrolledClasses()
     // console.log(paidClasses);
     return (
         <>
+            <Helmet>
+                <title>Musicine | Payment history</title>
+            </Helmet>
             <SectionTitle>Payment History</SectionTitle>
             <div className="overflow-x-auto mt-12 w-[90%] mx-auto">
                 <table className="table table-zebra">

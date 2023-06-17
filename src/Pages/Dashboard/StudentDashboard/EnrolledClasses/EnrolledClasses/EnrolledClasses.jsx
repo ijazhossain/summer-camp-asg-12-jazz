@@ -1,11 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../../../components/SectionTitle/SectionTitle";
 import useEnrolledClasses from "../../../../../hooks/useEnrolledClasses";
 
 const EnrolledClasses = () => {
-    const [paidClasses, refetch] = useEnrolledClasses()
+
+    const [paidClasses] = useEnrolledClasses()
     console.log(paidClasses);
     return (
         <div className="w-[90%] mx-auto">
+            <Helmet>
+                <title>Musicine | Enrolled Classes</title>
+            </Helmet>
             <SectionTitle>Enrolled classes</SectionTitle>
             <div className="overflow-x-auto mt-12">
                 <table className="table">

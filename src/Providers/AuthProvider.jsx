@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
                     })
             } else {
                 localStorage.removeItem('musician_secret_token')
-                setLoading(false)
+
             }
 
         })

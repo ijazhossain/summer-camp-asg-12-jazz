@@ -7,7 +7,9 @@ import { FaExclamationCircle } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
+
     const { login } = useAuth();
     const [error, setError] = useState('')
     const navigate = useNavigate()
@@ -35,8 +37,11 @@ const Login = () => {
     };
     return (
         <div>
+            <Helmet>
+                <title>Musicine | Login</title>
+            </Helmet>
             <SectionCover img={logImg} title="Login"></SectionCover>
-            <div className="container w-[50%] mx-auto text-center">
+            <div className="container lg:w-[50%] mx-auto text-center">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
                     <h2 className="text-3xl text-[#727475] font-semibold">Welcome Back</h2>
                     <p className="text-xs text-[#aba5a3]">Please enter your details</p>

@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import PopularClasses from "../PopularClasses/PopulaeClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors/PopularInstructors";
 import Introduction from "../Introduction/Introduction";
+import Paralex from "../Paralex/Paralex";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <Introduction></Introduction>
             <PopularClasses></PopularClasses>
+            <Paralex></Paralex>
             <PopularInstructors></PopularInstructors>
         </div>
     );
