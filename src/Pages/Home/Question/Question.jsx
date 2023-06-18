@@ -14,7 +14,7 @@ const Question = () => {
                                 Can I use it for my clients?
                             </div>
                             <div className="collapse-content">
-                                <p>Yes, you can use "Musicine" as a name for your client's music school or related services, provided that it is not already in use by another entity. However, it's always recommended to conduct a thorough search to ensure the name is available and doesn't infringe on any existing trademarks or copyrights. Additionally, consider consulting with legal professionals for guidance regarding naming and branding for your client.</p>
+                                <p>Yes, you can use Musicine as a name for your client&rsquo;s music school or related services, provided that it is not already in use by another entity. However, it is always recommended to conduct a thorough search to ensure the name is available and does not infringe on any existing trademarks or copyrights. Additionally, consider consulting with legal professionals for guidance regarding naming and branding for your client.</p>
                             </div>
                         </div>
                         <div className="collapse collapse-arrow join-item ">
@@ -45,7 +45,7 @@ const Question = () => {
                                 Can I use it for my clients?
                             </div>
                             <div className="collapse-content">
-                                <p>Yes, you can use "Musicine" as a name for your client's music school or related services, provided that it is not already in use by another entity. However, it's always recommended to conduct a thorough search to ensure the name is available and doesn't infringe on any existing trademarks or copyrights. Additionally, consider consulting with legal professionals for guidance regarding naming and branding for your client.</p>
+                                <p>Yes, you can use Musicine as a name for your client&rsquo;s music school or related services, provided that it is not already in use by another entity. However, it&rsquo;s always recommended to conduct a thorough search to ensure the name is available and doesn&rsquo;t infringe on any existing trademarks or copyrights. Additionally, consider consulting with legal professionals for guidance regarding naming and branding for your client.</p>
                             </div>
                         </div>
                         <div className="collapse collapse-arrow join-item ">

@@ -9,6 +9,7 @@ import Programme from "../Programme/Programme";
 import ChooseUs from "../ChooseUs/ChooseUs";
 import Question from "../Question/Question";
 import Contact from "../Contact/Contact";
+import Journey from "../Journey/Journey";
 
 
 const Home = () => {
@@ -24,9 +25,11 @@ const Home = () => {
             <Paralex></Paralex>
             <Programme></Programme>
             <ChooseUs></ChooseUs>
+            <Journey></Journey>
             <PopularInstructors></PopularInstructors>
             <Question></Question>
             <Contact></Contact>
+
         </div>
     );
 };
