@@ -10,6 +10,7 @@ import ChooseUs from "../ChooseUs/ChooseUs";
 import Question from "../Question/Question";
 import Contact from "../Contact/Contact";
 import Journey from "../Journey/Journey";
+import Update from "../Update/Update";
 
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
             <PopularInstructors></PopularInstructors>
             <Question></Question>
             <Contact></Contact>
+            <Update></Update>
 
         </div>
     );
