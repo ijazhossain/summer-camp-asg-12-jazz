@@ -8,6 +8,7 @@ import Support from "../Support/Support";
 import Programme from "../Programme/Programme";
 import ChooseUs from "../ChooseUs/ChooseUs";
 import Question from "../Question/Question";
+import Contact from "../Contact/Contact";
 
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
             <ChooseUs></ChooseUs>
             <PopularInstructors></PopularInstructors>
             <Question></Question>
+            <Contact></Contact>
         </div>
     );
 };
